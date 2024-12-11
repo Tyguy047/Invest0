@@ -13,20 +13,13 @@ def clear():
     else:
         os.system("clear")
 
-def quit():
-    def quit():
-        if platform.system() == "Windows":
-            os.system("taskkill /F /IM cmd.exe")
-        else:
-            os.system("pkill -f Invest0")
-
 def real_roi():
     print()
     paid = float(input("How Much Did You Pay?: "))
-    os.system("clear")
+    clear()
     print()
     now = float(input("How Much Is It Now Worth?: "))
-    os.system("clear")
+    clear()
     roi = ((now - paid) / paid) * 100
     print()
     print(f"Your Return On Investment Is: {roi}%")
@@ -36,10 +29,10 @@ def real_roi():
 def requested_roi():
     print()
     paid = float(input("How Much Did You Pay?: "))
-    os.system("clear")
+    clear()
     print()
     roi = float(input("What ROI% Are You Looking For?: "))
-    os.system("clear")
+    clear()
     now = (roi / 100 * paid) + paid
     print()
     print(f"You Need To Sell For: {now}")
@@ -73,6 +66,6 @@ while True:
             print()
             print("Invalid Choice!")
             print()
-            time.sleep(3)
+            time.sleep(1)
             clear()
     # End Of Code
