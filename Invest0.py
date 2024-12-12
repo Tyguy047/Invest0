@@ -7,6 +7,13 @@ import platform
 import time
 
 # Functions
+
+def quit():
+    if platform.system() == "Windows":
+        os.system("taskkill /f /im cmd.exe")     
+    else:
+        os.system("killall Terminal")
+
 def clear():
     if platform.system() == "Windows":
         os.system("cls")
@@ -24,8 +31,6 @@ def real_roi():
     print()
     print(f"Your Return On Investment Is: {roi}%")
 
-    
-
 def requested_roi():
     print()
     paid = float(input("How Much Did You Pay?: "))
@@ -40,12 +45,18 @@ def requested_roi():
 # Main Code
 while True:
     clear()
-    print()
-    print("Welcome To Invest0!")
-    print("The easiest way to calculate your ROI's (Return On Investments)!")
-    print()
-    print("1. Calculate Your ROI if you sell now or already sold!")
-    print("2. Calculate what you need to sell for to get ROI you want!")
+    print("""
+Welcome To 𝙸𝚗𝚟𝚎𝚜𝚝𝟶!
+The easiest way to calculate your ROI's (Return On Investments)!
+
+          
+Menu:
+          
+1. Calculate Your ROI if you sell now or already sold!
+2. Calculate what you need to sell for to get ROI you want!
+3. Exit/Quit!
+""")
+
     print()
     choice = input("What Would You Like To Do?: ")
 
@@ -61,6 +72,13 @@ while True:
             requested_roi()
             print()
             input("Press Enter To Go Back To The Menu...")
+
+    elif choice == "3":
+            clear()
+            print()
+            print("Goodbye!")
+            time.sleep(1)
+            quit()
 
     else:
             print()
