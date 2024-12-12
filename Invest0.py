@@ -12,6 +12,7 @@ def quit():
     if platform.system() == "Windows":
         os.system("taskkill /f /im cmd.exe")     
     else:
+        os.system("exit")
         os.system("killall Terminal")
 
 def clear():
