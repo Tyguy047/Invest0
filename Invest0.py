@@ -49,7 +49,7 @@ Menu:
                 time.sleep(1)
                 clear()
 
-        if KeyboardInterrupt:
+        if choice == KeyboardInterrupt:
                 clear()
                 print()
                 print("Goodbye!")
